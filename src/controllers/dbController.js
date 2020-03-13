@@ -21,7 +21,7 @@ module.exports = {
             cidade: req.body.cidade,
             especialidade: req.body.especialidade
         }).then((response) => {
-            res.json(response)
+            res.json(response.status)
         })
     },
 
@@ -58,9 +58,6 @@ module.exports = {
 
     updateDoctor(req, res) {
 
-
-        //TODO RETORNAR CASO FOR ALTERADO OU NÃO ALGO DA TABELA
-
         Medico.update({
             nome: req.body.nome,
             especialidade: req.body.especialidade,
@@ -73,11 +70,17 @@ module.exports = {
                 crm: req.params.crm
             }
         }).then(response => {
-            if (response > 0) {
-                res.json("Alterado")
-            } else {
-                res.json("Nada alterado")
+
+            console.log(response)
+
+            if(response.includes(1)){
+                res.sendStatus(200)
+            }else{
+                res.sendStatus(404)
             }
+
+            
+            
         })
     }
 
