@@ -11,9 +11,10 @@ const sequelize = new Sequelize('banco_gbc_med', 'lennyk', 'simone20', {
 
 class CPF extends Model { }
 
+
 CPF.init({
     cpf: DataTypes.STRING,
-}, { sequelize, modelName: 'tb_cpf' })
+}, { sequelize, freezeTableName: true, modelName: 'tb_cpf' })
 CPF.removeAttribute('id')
 
 module.exports = sequelize.models.tb_cpf
