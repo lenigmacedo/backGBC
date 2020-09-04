@@ -1,10 +1,26 @@
 const Medico = require('../models/Medico')
+const CPF = require('../models/CPF')
 
 function isEmpty(response) {
     return !Object.keys(response).length
 }
 
 module.exports = {
+
+    getCPF(req, res) {
+        CPF.findAll({
+            where: {
+                cpf: req.params.cpf
+            }
+        }).then(response => {
+            if (isEmpty(response)) {
+                return res.json('vazio')
+            } else {
+                res.json(response)
+            }
+        })
+    },
+
 
     getDoctors(req, res) {
         Medico.findAll().then(medicos => {
@@ -73,14 +89,14 @@ module.exports = {
 
             console.log(response)
 
-            if(response.includes(1)){
+            if (response.includes(1)) {
                 res.sendStatus(200)
-            }else{
+            } else {
                 res.sendStatus(404)
             }
 
-            
-            
+
+
         })
     }
 
