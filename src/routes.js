@@ -18,6 +18,6 @@ routes.delete('/medico/:crm/delete', dbController.deleteDoctor)
 
 routes.put('/medico/:crm/update', dbController.updateDoctor)
 
-routes.post('/cpf/:cpf', dbController.getCPF)
+routes.post('/cpf/:cpf?', dbController.getCPF)
 
 module.exports = routes
