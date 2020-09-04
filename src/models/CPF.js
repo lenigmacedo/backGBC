@@ -16,4 +16,4 @@ CPF.init({
 }, { sequelize, modelName: 'tb_cpf' })
 CPF.removeAttribute('id')
 
-module.exports = sequelize.models.tb_medicos
+module.exports = sequelize.models.tb_cpf
