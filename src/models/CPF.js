@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize')
 
-const sequelize = new Sequelize('banco_gbc_med', 'lennyk', 'simone20', {
-    host: 'www.db4free.net',
+const sequelize = new Sequelize('nWOe1C0RKm', 'nWOe1C0RKm', 'ofHW5z6OXa', {
+    host: 'www.remotemysql.com',
     port: '3306',
     dialect: 'mysql',
     define: {
